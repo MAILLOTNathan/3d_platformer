@@ -447,6 +447,7 @@ tracks/4/keys = {
 
 [node name="Player" type="KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.33102, 0 )
+collision_layer = 2
 script = ExtResource( 1 )
 
 [node name="Body" type="MeshInstance" parent="."]
@@ -530,7 +531,7 @@ anims/RESET = SubResource( 26 )
 anims/RightFootAnim = SubResource( 27 )
 
 [node name="LeftLeg" type="Spatial" parent="."]
-transform = Transform( 0.798635, -0.300908, -0.521187, 0, 0.866025, -0.5, 0.601815, 0.399318, 0.691639, 0.488, -1.167, -0.125 )
+transform = Transform( 0.798635, -0.300907, -0.521187, 0, 0.866025, -0.5, 0.601815, 0.399318, 0.691639, 0.488, -1.167, -0.125 )
 
 [node name="LeftFoot" type="MeshInstance" parent="LeftLeg"]
 transform = Transform( 0.255029, 0, 0, 0, 0.130251, 0, 0, 0, 0.274647, 0.015, -0.00899994, -0.28 )
