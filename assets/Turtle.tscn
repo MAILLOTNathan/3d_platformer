@@ -100,7 +100,8 @@ material/0 = SubResource( 13 )
 shape = SubResource( 14 )
 
 [node name="Trigger" type="Area" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.393967, 1.76703 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.627983, 1.76703 )
+collision_layer = 0
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Trigger"]
