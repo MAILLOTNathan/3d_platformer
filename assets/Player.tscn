@@ -85,7 +85,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 180 ), Vector3( 0, 0, 220 ), Vector3( 0, 0, 180 ) ]
+"values": [ Vector3( 168, 30, 5 ), Vector3( 140, 50, 5 ), Vector3( 168, 30, 5 ) ]
 }
 
 [sub_resource type="Animation" id=19]
@@ -97,10 +97,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 0.6, 0.7, 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 38, 30, 5 ), Vector3( 0, 0, 0 ) ]
+"values": [ Vector3( 0, 0, 0 ), Vector3( 120, 30, 5 ), Vector3( 144, 30, 5 ), Vector3( 168, 30, 5 ), Vector3( 180, 30, 5 ), Vector3( 0, 0, 180 ) ]
 }
 
 [sub_resource type="Animation" id=20]
@@ -165,7 +165,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 38, -30, 5 ), Vector3( 0, 0, 0 ) ]
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 120 ), Vector3( 0, 0, 180 ) ]
 }
 
 [sub_resource type="Animation" id=23]
@@ -213,7 +213,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.5 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Vector3( 0, 0, 0 ), Vector3( -31, 0, 0 ), Vector3( 0, 0, 0 ) ]
@@ -389,6 +389,20 @@ tracks/3/keys = {
 "clips": PoolStringArray( "Jump" ),
 "times": PoolRealArray( 0 )
 }
+tracks/4/type = "method"
+tracks/4/path = NodePath(".")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "_end_animation"
+} ]
+}
 
 [sub_resource type="Animation" id=31]
 resource_name = "Walking"
@@ -481,6 +495,7 @@ anims/WalkAnim = SubResource( 18 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.98431, 0.176449, 0, -0.176449, 0.98431, 0, 3.26993, 3.81307 )
+current = true
 fov = 92.8125
 
 [node name="LeftShoulder" type="Spatial" parent="."]

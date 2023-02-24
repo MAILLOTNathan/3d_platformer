@@ -1,6 +1,12 @@
 extends KinematicBody
 
 onready var cam = $Camera
+onready var HeadAnim = $Head/HeadAnim
+onready var LeftShoulderAnim = $LeftShoulder/LeftArmAnim
+onready var RightShoulderAnim = $RightShoulder/RightArmAnim
+onready var LeftFootAnim = $LeftLeg/LeftFootAnim
+onready var RightFootAnim = $RightLeg/RightFootAnim
+onready var Anim = $AnimationPlayer
 
 export var sensibility = 0.2
 export var min_angle = -80
@@ -21,29 +27,41 @@ var velocity = Vector3.ZERO
 var move_dir = Vector3.ZERO
 var look_rot = Vector3.ZERO
 
+var current_animation = ""
 var count_jump = 0
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta):
+	if current_animation != "":
+		Anim.play(current_animation)
 	cam.rotation_degrees.x = look_rot.x
-	if velocity != Vector3.ZERO:
+	rotation_degrees.y = look_rot.y
+	"""if !(between(velocity.x, -0.05, 0.05) and between(velocity.y, -0.05, 0.05) and between(velocity.z, -0.05, 0.05)): # if condition suppose to be !(condition) but camera bugging
 		rotation_degrees.y = look_rot.y
 	else:
 		cam.rotation_degrees.y = look_rot.y
+	"""
 
 	if (Input.is_action_just_pressed("Jump")):
+		current_animation = "Jump"
 		if count_jump < MAX_JUMP:
 			count_jump += 1
 			velocity.y = jump_force
+	if current_animation == "Fall" and is_on_floor():
+		current_animation = "Walking"
 	if is_on_floor():
 		count_jump = 0
 	if not is_on_floor():
+		if -0.05 >= velocity.y: 
+			current_animation = "Fall"
 		velocity.y -= gravity * delta
 
 
 	if Input.is_action_pressed("Forward") or Input.is_action_pressed("Backward") or Input.is_action_pressed("Left") or Input.is_action_pressed("Right"):
+		if is_on_floor():
+			current_animation = "Walking"
 		if Input.is_action_pressed("Run"):
 			speed = RUN_SPEED
 		else:
@@ -65,7 +83,12 @@ func _input(event):
 		look_rot.x = clamp(look_rot.x, min_angle, max_angle)
 		look_rot.y -= event.relative.x * sensibility
 
+func _end_animation():
+	current_animation = "Walking"
+	Anim.set_speed()
 
+func between(n: float, a: float, b: float):
+	return a <= n and n <= b
 
 
 
