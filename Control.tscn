@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/Minecraft.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Interface.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 80
+font_data = ExtResource( 1 )
+
+[sub_resource type="Theme" id=4]
+default_font = SubResource( 3 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Life" type="RichTextLabel" parent="."]
+margin_left = 13.0
+margin_top = 19.0
+margin_right = 427.0
+margin_bottom = 151.0
+theme = SubResource( 2 )
+theme_type_variation = "lol"
+tab_size = 24
+text = "LIFE =
+"
+
+[node name="health" type="RichTextLabel" parent="."]
+margin_left = 235.0
+margin_top = 14.0
+margin_right = 333.0
+margin_bottom = 106.0
+theme = SubResource( 4 )
+text = "3"
+
+[node name="credits" type="RichTextLabel" parent="."]
+margin_left = 1617.0
+margin_top = 15.0
+margin_right = 1730.0
+margin_bottom = 107.0
+theme = SubResource( 4 )
+text = "0"
+
+[node name="Coins" type="RichTextLabel" parent="."]
+margin_left = 1743.0
+margin_top = 21.0
+margin_right = 1937.0
+margin_bottom = 152.0
+theme = SubResource( 2 )
+theme_type_variation = "lol"
+tab_size = 24
+text = "Coins
+"
