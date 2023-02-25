@@ -22,7 +22,8 @@ export var deceleration = 100
 export var gravity = 100
 export var jump_force = 30
 export var MAX_JUMP = 2
-export var SPAWN = Vector3(0, 3.585, -4.04)
+#export var SPAWN = Vector3(0, 3.585, -4.04)
+export(Vector3) var SPAWN = Vector3(0, 0, 0)
 
 var velocity = Vector3.ZERO
 var move_dir = Vector3.ZERO
@@ -39,6 +40,8 @@ func _physics_process(delta):
 		Anim.play(current_animation)
 	cam.rotation_degrees.x = look_rot.x
 	rotation_degrees.y = look_rot.y
+	if between(velocity.x, -0.05, 0.05) and between(velocity.y, -0.05, 0.05) and between(velocity.z, -0.05, 0.05):
+		Anim.stop()
 	"""
 	if between(velocity.x, -0.05, 0.05) and between(velocity.y, -0.05, 0.05) and between(velocity.z, -0.05, 0.05):
 		cam.rotation_degrees.y = rotation_degrees.y
