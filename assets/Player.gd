@@ -42,6 +42,8 @@ func _physics_process(delta):
 	cam.rotation_degrees.x = look_rot.x
 	rotation_degrees.y = look_rot.y
 	if between(velocity.x, -0.05, 0.05) and between(velocity.y, -0.05, 0.05) and between(velocity.z, -0.05, 0.05):
+		Anim.play("Walking")
+		yield(get_tree().create_timer(0.05), "timeout")
 		Anim.stop()
 	"""
 	if between(velocity.x, -0.05, 0.05) and between(velocity.y, -0.05, 0.05) and between(velocity.z, -0.05, 0.05):
