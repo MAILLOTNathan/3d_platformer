@@ -25,9 +25,10 @@ export var MAX_JUMP = 2
 #export var SPAWN = Vector3(0, 3.585, -4.04)
 export(Vector3) var SPAWN = Vector3(0, 0, 0)
 
-var velocity = Vector3.ZERO
+var stat = Stats
 var move_dir = Vector3.ZERO
 var look_rot = Vector3.ZERO
+var velocity = Vector3.ZERO
 
 var current_animation = ""
 var count_jump = 0
@@ -82,8 +83,9 @@ func _physics_process(delta):
 	velocity.x = lerp(velocity.x, move_dir.x * speed, acceleration * delta)
 	velocity.z = lerp(velocity.z, move_dir.z * speed, acceleration * delta)
 	velocity = move_and_slide(velocity, Vector3.UP)
-	if translation.y < -50:
+	if translation.y < -50 or stat.health == 0:
 		translation = Vector3(0, 3.585, -4.04)
+		stat.health = 3
 		
 func _input(event):
 	if event is InputEventMouseMotion:
