@@ -9,7 +9,7 @@ onready var RightFootAnim = $RightLeg/RightFootAnim
 onready var Anim = $AnimationPlayer
 onready var Head = $Head
 
-export var sensibility = 0.2
+export var sensibility = 0.1
 export var min_angle = -80
 export var max_angle = 90
 
@@ -20,7 +20,7 @@ export var acceleration = 50
 export var deceleration = 100
 
 export var gravity = 100
-export var jump_force = 40
+export var jump_force = 30
 export var MAX_JUMP = 2
 export var SPAWN = Vector3(0, 3.585, -4.04)
 
@@ -38,12 +38,17 @@ func _physics_process(delta):
 	if current_animation != "":
 		Anim.play(current_animation)
 	cam.rotation_degrees.x = look_rot.x
+	rotation_degrees.y = look_rot.y
+	"""
 	if between(velocity.x, -0.05, 0.05) and between(velocity.y, -0.05, 0.05) and between(velocity.z, -0.05, 0.05):
-		Head.rotation_degrees.y = look_rot.y
+		cam.rotation_degrees.y = rotation_degrees.y
+		Head.rotation_degrees.y = clamp(look_rot.y, -45, 45)
+		cam.rotation_degrees.y = clamp(look_rot.y, -45, 45)
 	else:
-		Head.rotation_degrees.y = 0
+		Head.rotation_degrees.y = cam.rotation_degrees.y
 		rotation_degrees.y = look_rot.y
-	
+		"""
+		
 	if (Input.is_action_just_pressed("Jump")):
 		current_animation = "Jump"
 		if count_jump < MAX_JUMP:
