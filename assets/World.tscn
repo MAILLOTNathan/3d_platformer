@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/Turtle.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Control.tscn" type="PackedScene" id=4]
 
 [node name="World" type="Spatial"]
 
@@ -15,5 +14,5 @@ transform = Transform( 0.999985, 0, 0.00546286, 0, 1, 0, -0.00546286, 0, 0.99998
 [node name="Turtle" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.06324, 3.88653 )
 collision_mask = 9
-
-[node name="Control" parent="." instance=ExtResource( 4 )]
+max_distance = 8
+min_distance = -8
