@@ -85,7 +85,6 @@ func _input(event):
 
 func _end_animation():
 	current_animation = "Walking"
-	Anim.set_speed()
 
 func between(n: float, a: float, b: float):
 	return a <= n and n <= b
