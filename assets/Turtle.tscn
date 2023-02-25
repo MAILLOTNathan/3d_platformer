@@ -12,6 +12,9 @@ albedo_color = Color( 0.0588235, 0.596078, 0, 1 )
 [sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 1, 0.878431, 0.592157, 1 )
 
+[sub_resource type="BoxShape" id=15]
+extents = Vector3( 0.374554, 0.183532, 0.437056 )
+
 [sub_resource type="CapsuleMesh" id=5]
 
 [sub_resource type="SpatialMaterial" id=6]
@@ -39,9 +42,6 @@ albedo_color = Color( 0, 0.827451, 0.0901961, 1 )
 [sub_resource type="BoxShape" id=14]
 extents = Vector3( 0.668137, 0.367187, 1 )
 
-[sub_resource type="BoxShape" id=15]
-extents = Vector3( 0.374554, 0.183532, 0.437056 )
-
 [sub_resource type="BoxShape" id=16]
 extents = Vector3( 0.648734, 0.311883, 0.945665 )
 
@@ -60,6 +60,13 @@ material/0 = SubResource( 2 )
 transform = Transform( 0.472029, 0, 0, 0, 0.265047, 0, 0, 0, 0.393382, 0, -0.111815, 0 )
 mesh = SubResource( 3 )
 material/0 = SubResource( 4 )
+
+[node name="HurtBox" type="Area" parent="Shell"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.525966, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Shell/HurtBox"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.507879, 0 )
+shape = SubResource( 15 )
 
 [node name="Members" type="Spatial" parent="."]
 
@@ -103,11 +110,8 @@ material/0 = SubResource( 13 )
 [node name="CollisionShape" type="CollisionShape" parent="Hitbox"]
 shape = SubResource( 14 )
 
-[node name="HurtBox" type="Area" parent="."]
-
-[node name="CollisionShape" type="CollisionShape" parent="HurtBox"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.507879, 0 )
-shape = SubResource( 15 )
-
 [node name="CollisionShape" type="CollisionShape" parent="."]
 shape = SubResource( 16 )
+
+[connection signal="body_entered" from="Shell/HurtBox" to="." method="_on_HurtBox_body_entered"]
+[connection signal="body_entered" from="Hitbox" to="." method="_on_Hitbox_body_entered"]
