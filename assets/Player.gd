@@ -7,6 +7,7 @@ onready var RightShoulderAnim = $RightShoulder/RightArmAnim
 onready var LeftFootAnim = $LeftLeg/LeftFootAnim
 onready var RightFootAnim = $RightLeg/RightFootAnim
 onready var Anim = $AnimationPlayer
+onready var Head = $Head
 
 export var sensibility = 0.2
 export var min_angle = -80
@@ -37,13 +38,12 @@ func _physics_process(delta):
 	if current_animation != "":
 		Anim.play(current_animation)
 	cam.rotation_degrees.x = look_rot.x
-	rotation_degrees.y = look_rot.y
-	"""if !(between(velocity.x, -0.05, 0.05) and between(velocity.y, -0.05, 0.05) and between(velocity.z, -0.05, 0.05)): # if condition suppose to be !(condition) but camera bugging
-		rotation_degrees.y = look_rot.y
+	if between(velocity.x, -0.05, 0.05) and between(velocity.y, -0.05, 0.05) and between(velocity.z, -0.05, 0.05):
+		Head.rotation_degrees.y = look_rot.y
 	else:
-		cam.rotation_degrees.y = look_rot.y
-	"""
-
+		Head.rotation_degrees.y = 0
+		rotation_degrees.y = look_rot.y
+	
 	if (Input.is_action_just_pressed("Jump")):
 		current_animation = "Jump"
 		if count_jump < MAX_JUMP:
