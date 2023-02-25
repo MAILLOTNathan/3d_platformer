@@ -11,9 +11,6 @@
 [node name="Player" parent="." instance=ExtResource( 3 )]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0240779, 3.58503, -4.07193 )
 
-[node name="LeftLeg" parent="Player" index="6"]
-transform = Transform( 0.798635, -0.300907, -0.521187, 0, 0.866025, -0.5, 0.601815, 0.399318, 0.691639, 0.488, -1.167, -0.125 )
-
 [node name="Turtle" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.999985, 0, 0.00546286, 0, 1, 0, -0.00546286, 0, 0.999985, -0.0240779, 3.30596, 3.9068 )
 max_distance = 8
