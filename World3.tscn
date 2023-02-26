@@ -1,0 +1,204 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/GrassBloc1.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/GrassBloc3.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/GrassBloc2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/Coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/Turtle.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Trigger.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Zone.tscn" type="PackedScene" id=8]
+[ext_resource path="res://World3.gd" type="Script" id=9]
+
+[node name="World3" type="Spatial"]
+script = ExtResource( 9 )
+
+[node name="GrassBloc1" parent="." instance=ExtResource( 1 )]
+
+[node name="GrassBloc1" parent="GrassBloc1" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 105.519, 0, 0 )
+
+[node name="GrassBloc1" parent="GrassBloc1/GrassBloc1" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4462, 7.16117, 0 )
+
+[node name="GrassBloc1" parent="GrassBloc1/GrassBloc1/GrassBloc1" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4462, 7.16117, 0 )
+
+[node name="GrassBloc1" parent="GrassBloc1/GrassBloc1/GrassBloc1/GrassBloc1" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4462, 7.16117, 0 )
+
+[node name="GrassBloc1" parent="GrassBloc1/GrassBloc1/GrassBloc1/GrassBloc1/GrassBloc1" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4462, 7.16117, 0 )
+
+[node name="GrassBloc1" parent="GrassBloc1/GrassBloc1/GrassBloc1/GrassBloc1/GrassBloc1/GrassBloc1" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4462, 7.16117, 0 )
+
+[node name="GrassBloc1" parent="GrassBloc1/GrassBloc1/GrassBloc1/GrassBloc1/GrassBloc1/GrassBloc1/GrassBloc1" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 194.732, -34.2403, -14.2466 )
+
+[node name="GrassBloc2" parent="GrassBloc1/GrassBloc1" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 161.486, 0, -5.44525 )
+
+[node name="GrassBloc1" parent="GrassBloc1/GrassBloc1/GrassBloc2" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4462, 7.16117, 11.8348 )
+
+[node name="GrassBloc1" parent="GrassBloc1/GrassBloc1/GrassBloc2/GrassBloc1" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4462, 7.16117, -10.7916 )
+
+[node name="GrassBloc1" parent="GrassBloc1/GrassBloc1/GrassBloc2/GrassBloc1/GrassBloc1" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4462, 7.16117, 9.35925 )
+
+[node name="GrassBloc1" parent="GrassBloc1/GrassBloc1/GrassBloc2/GrassBloc1/GrassBloc1/GrassBloc1" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4462, 7.16117, -8.00484 )
+
+[node name="GrassBloc1" parent="GrassBloc1/GrassBloc1/GrassBloc2/GrassBloc1/GrassBloc1/GrassBloc1/GrassBloc1" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.4462, 7.16117, 8.5576 )
+
+[node name="GrassBloc2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4512, 0, 0 )
+
+[node name="GrassBloc3" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 18.6012, 0, -10.9078 )
+
+[node name="GrassBloc4" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.998088, 0, 0.0618151, 0, 1, 0, -0.0618151, 0, -0.998088, 26.5989, 5.19558, -16.073 )
+
+[node name="GrassBloc9" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.999989, 0, 0.00499169, 0, 1, 0, -0.00499169, 0, -0.999989, 70.4884, -0.0203209, 4.5808 )
+
+[node name="GrassBloc9" parent="GrassBloc9" instance=ExtResource( 1 )]
+transform = Transform( -0.999989, 0, 0.00499169, 0, 1, 0, -0.00499169, 0, -0.999989, -16.4289, -0.0203209, -0.118268 )
+
+[node name="GrassBloc5" parent="." instance=ExtResource( 1 )]
+transform = Transform( -0.998088, 0, 0.0618151, 0, 1, 0, -0.0618151, 0, -0.998088, 50.6894, -0.275631, -0.838754 )
+
+[node name="GrassBloc6" parent="." instance=ExtResource( 3 )]
+transform = Transform( -0.998088, 0, 0.0618151, 0, 1, 0, -0.0618151, 0, -0.998088, 38.3073, 13.0369, -6.05296 )
+
+[node name="GrassBloc8" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.4759, 0, -4.79437 )
+
+[node name="GrassBloc8" parent="GrassBloc8" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5222, 0, -0.0600839 )
+
+[node name="GrassBloc7" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.4421, 0, 0 )
+
+[node name="GrassBloc7" parent="GrassBloc7" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5643, 0, 0 )
+
+[node name="Turtle4" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 226.685, 1.61046, -5.9835 )
+max_distance = 12
+min_distance = -12
+
+[node name="Turtle3" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 210.482, 1.51256, -5.97839 )
+max_distance = 12
+min_distance = -12
+
+[node name="Turtle2" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 86.998, 1.46462, -5.49017 )
+max_distance = 12
+min_distance = -12
+
+[node name="Turtle" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 70.4725, 1.56211, -5.92984 )
+max_distance = 12
+min_distance = -12
+
+[node name="GrassBloc10" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 183.989, 0, 0 )
+
+[node name="GrassBloc10" parent="GrassBloc10" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.77956, 0, 0 )
+
+[node name="GrassBloc10" parent="GrassBloc10/GrassBloc10" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.80307, 0, 0 )
+
+[node name="GrassBloc10" parent="GrassBloc10/GrassBloc10/GrassBloc10" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 141.928, 0, 0 )
+
+[node name="GrassBloc10" parent="GrassBloc10/GrassBloc10/GrassBloc10/GrassBloc10" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.99927, 8.64562, -5.09094 )
+
+[node name="GrassBloc10" parent="GrassBloc10/GrassBloc10/GrassBloc10/GrassBloc10/GrassBloc10" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.99927, 8.64562, -5.09094 )
+
+[node name="GrassBloc11" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 210.606, 0, 0 )
+
+[node name="GrassBloc11" parent="GrassBloc11" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0552063, 0, 4.70004 )
+
+[node name="GrassBloc11" parent="GrassBloc11/GrassBloc11" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.059433, 0, -9.43341 )
+
+[node name="GrassBloc12" parent="GrassBloc11" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0525, 0, 0 )
+
+[node name="GrassBloc11" parent="GrassBloc11/GrassBloc12" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0552063, 0, 4.70004 )
+
+[node name="GrassBloc11" parent="GrassBloc11/GrassBloc12/GrassBloc11" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.059433, 0, -9.43341 )
+
+[node name="GrassBloc12" parent="GrassBloc11/GrassBloc12" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5549, 0, 0 )
+
+[node name="GrassBloc11" parent="GrassBloc11/GrassBloc12/GrassBloc12" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0552063, 0, 4.70004 )
+
+[node name="GrassBloc11" parent="GrassBloc11/GrassBloc12/GrassBloc12/GrassBloc11" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.059433, 0, -9.43341 )
+
+[node name="GrassBloc12" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 254.682, 0, 0 )
+
+[node name="GrassBloc11" parent="GrassBloc12" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0552063, 0, 4.70004 )
+
+[node name="GrassBloc11" parent="GrassBloc12/GrassBloc11" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.059433, 0, -9.43341 )
+
+[node name="GrassBloc12" parent="GrassBloc12" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 107.842, 0, -40.7286 )
+
+[node name="GrassBloc11" parent="GrassBloc12/GrassBloc12" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0552063, 0, 4.70004 )
+
+[node name="GrassBloc11" parent="GrassBloc12/GrassBloc12/GrassBloc11" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.059433, 0, -9.43341 )
+
+[node name="Trigger" parent="." instance=ExtResource( 7 )]
+transform = Transform( -5, 0, -4.37114e-07, 0, 5, 0, 4.37114e-07, 0, -5, 362.355, 4.03594, -46.3274 )
+path = "res://Menu.tscn"
+
+[node name="Coin" parent="." instance=ExtResource( 5 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 70.4166, 2.01232, 5.07805 )
+
+[node name="Coin2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 86.9416, 1.67153, -6.47819 )
+
+[node name="GrassBloc13" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 162.141, 0, 0 )
+
+[node name="Coin3" parent="." instance=ExtResource( 5 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 162.29, 1.91007, 0.121685 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+transform = Transform( -0.0214834, 0, -0.999769, 0, 1, 0, 0.999769, 0, -0.0214834, 0, 2.36415, 0 )
+
+[node name="Zone" parent="." instance=ExtResource( 8 )]
+transform = Transform( -9.90611e-07, 0, 0.998156, 0, 24.5276, 0, -22.6625, 0, -4.36308e-08, -16.6484, 16.3986, 7.27723e-07 )
+speed = 10
+
+[node name="Turtle5" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 242.232, 1.51256, -5.97839 )
+max_distance = 12
+min_distance = -12
+
+[node name="Turtle6" parent="." instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 254.613, 1.51256, -5.97839 )
+max_distance = 12
+min_distance = -12
