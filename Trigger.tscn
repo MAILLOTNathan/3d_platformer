@@ -49,5 +49,6 @@ mesh = SubResource( 6 )
 material/0 = SubResource( 7 )
 
 [node name="Error" parent="." instance=ExtResource( 2 )]
+visible = false
 
 [connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]
