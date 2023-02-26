@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Trigger.gd" type="Script" id=1]
+[ext_resource path="res://Error.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CylinderShape" id=1]
 height = 0.357425
@@ -47,5 +48,6 @@ transform = Transform( 0.490096, 0, 0, 0, -1.21505e-09, -0.490096, 0, 0.0277972,
 mesh = SubResource( 6 )
 material/0 = SubResource( 7 )
 
-[connection signal="area_shape_entered" from="Area" to="." method="_on_Area_area_shape_entered"]
-[connection signal="body_shape_entered" from="Area" to="." method="_on_Area_body_shape_entered"]
+[node name="Error" parent="." instance=ExtResource( 2 )]
+
+[connection signal="body_entered" from="Area" to="." method="_on_Area_body_entered"]

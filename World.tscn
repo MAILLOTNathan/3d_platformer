@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Map.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/Turtle.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/Coin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Trigger.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Control.tscn" type="PackedScene" id=6]
 
 [node name="World" type="Spatial"]
 
@@ -15,5 +18,51 @@ transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0240
 transform = Transform( 0.999985, 0, 0.00546286, 0, 1, 0, -0.00546286, 0, 0.999985, -0.0240779, 3.30596, 3.9068 )
 max_distance = 8
 min_distance = -8
+
+[node name="Turtle2" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.90337, 30.1531, 29.7247 )
+max_distance = 12
+min_distance = -12
+
+[node name="Turtle3" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.9724, 35.1981, 27.0586 )
+max_distance = 12
+min_distance = -12
+
+[node name="Turtle4" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.3333, 39.9634, 22.8825 )
+max_distance = 12
+min_distance = -12
+
+[node name="Turtle5" parent="." instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 54.9499, 2.03121, -2.71671 )
+max_distance = 24
+min_distance = -24
+axe = "x"
+
+[node name="Turtle6" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 77.9186, 1.5299, -30.899 )
+max_distance = 32
+min_distance = -32
+
+[node name="Turtle7" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 55.6689, 1.42017, -21.3335 )
+max_distance = 8
+min_distance = -8
+
+[node name="Coin" parent="." instance=ExtResource( 4 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 20.1563, 24.7384, 82.8162 )
+
+[node name="Coin2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 37.8707, 39.3674, 62.9359 )
+
+[node name="Coin3" parent="." instance=ExtResource( 4 )]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 56.1226, 2.26127, -16.3967 )
+
+[node name="Trigger" parent="." instance=ExtResource( 5 )]
+transform = Transform( -2.18557e-07, 0, -5, 0, 5, 0, 5, 0, -2.18557e-07, 63.8158, 4.02354, -29.8508 )
+path = "res://World2.tscn"
+
+[node name="Control" parent="." instance=ExtResource( 6 )]
 
 [editable path="Player"]

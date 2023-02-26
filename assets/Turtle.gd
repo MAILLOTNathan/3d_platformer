@@ -5,6 +5,7 @@ onready var mem = $Members
 export var speed = 5
 export var max_distance = 100
 export var min_distance = -100
+export var axe = "z"
 
 var stat = Stats
 var cur_distance = 0
@@ -21,7 +22,10 @@ func _physics_process(delta):
 			mem.visible = true
 			timer = 0
 	if cur_distance < max_distance and cur_distance > min_distance and is_alive:
-		translation.z += speed * delta
+		if axe == "z":
+			translation.z += speed * delta
+		else:
+			translation.x += speed * delta
 		cur_distance += speed * delta
 	else:
 		if is_alive:
