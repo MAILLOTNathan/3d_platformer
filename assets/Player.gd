@@ -86,7 +86,7 @@ func _physics_process(delta):
 	velocity.z = lerp(velocity.z, move_dir.z * speed, acceleration * delta)
 	velocity = move_and_slide(velocity, Vector3.UP)
 	if translation.y < -50 or stat.health == 0:
-		translation = Vector3(0, 3.585, -4.04)
+		translation = SPAWN
 		stat.health = 3
 		
 func _input(event):
