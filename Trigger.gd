@@ -1,7 +1,16 @@
 extends Spatial
 
+onready var error = $Error
+
 export var path = ""
 
-func _on_Area_body_shape_entered(body_rid, body, body_shape_index, local_shape_index):
+var stat = Stats
+
+func _on_Area_body_entered(body):
 	if body.get_name() == "Player":
-		get_tree().change_scene(path)
+		if stat.coins == 3:
+			get_tree().change_scene(path)
+		else:
+			error.visible = true
+			yield(get_tree().create_timer(3.0), "timeout")
+			error.visible = false
